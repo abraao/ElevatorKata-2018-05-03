@@ -6,11 +6,11 @@ namespace ElevatorKata
 {
     public class Elevator
     {
-        private List<int> _elevatorStops;
+        private HashSet<int> _elevatorStops;
 
         public Elevator(int floor)
         {
-            _elevatorStops = new List<int>();
+            _elevatorStops = new HashSet<int>();
             Floor = floor;
         }
 
@@ -18,12 +18,15 @@ namespace ElevatorKata
 
         public void Operate(List<ElevatorRequest> elevatorRequests)
         {
+            int lastFloor = Floor;
             foreach (var elevatorRequest in elevatorRequests)
             {
+                this._elevatorStops.Add(elevatorRequest.FloorStart);
                 this._elevatorStops.Add(elevatorRequest.FloorEnd);
+                lastFloor = elevatorRequest.FloorEnd;
             }
 
-            Floor = this._elevatorStops.Last();
+            Floor = lastFloor;
         }
 
         public int [] GetElevatorStops()
