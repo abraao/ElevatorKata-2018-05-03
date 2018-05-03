@@ -62,6 +62,12 @@ namespace ElevatorKata.Tests
             Open_Door_On_Specified_Floors(0, new[] {new[] {2, 3}}, new[] {2, 3});
         }
 
+        [Test]
+        public void Handle_Requests_In_Different_Directions()
+        {
+            Open_Door_On_Specified_Floors(0, new[] { new[] { 0, 3 }, new[] { 2, -1 } }, new[] { 0, 2, 3, -1 });
+        }
+
         private void Open_Door_On_Specified_Floors(
             int elevatorInitialFloor,
             int[][] elevatorRequestsArrays,

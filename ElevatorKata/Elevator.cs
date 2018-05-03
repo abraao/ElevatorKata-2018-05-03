@@ -19,11 +19,28 @@ namespace ElevatorKata
         public void Operate(List<ElevatorRequest> elevatorRequests)
         {
             int lastFloor = Floor;
-            foreach (var elevatorRequest in elevatorRequests)
+
+            for (int floorCounter = Floor; floorCounter <= 6; floorCounter++)
             {
-                this._elevatorStops.Add(elevatorRequest.FloorStart);
-                this._elevatorStops.Add(elevatorRequest.FloorEnd);
-                lastFloor = elevatorRequest.FloorEnd;
+                if (elevatorRequests.Any(r => r.FloorStart == floorCounter || r.FloorEnd == floorCounter))
+                {
+                    this._elevatorStops.Add(floorCounter);
+                    lastFloor = floorCounter;
+                }
+            }
+
+            bool isGoingDownNeeded = elevatorRequests.Any(r => r.FloorEnd < r.FloorStart);
+
+            if (isGoingDownNeeded)
+            {
+                for (int floorCounter = 6; floorCounter >= -1; floorCounter--)
+                {
+                    if (elevatorRequests.Any(r => r.FloorEnd == floorCounter))
+                    {
+                        this._elevatorStops.Add(floorCounter);
+                        lastFloor = floorCounter;
+                    }
+                }
             }
 
             Floor = lastFloor;
