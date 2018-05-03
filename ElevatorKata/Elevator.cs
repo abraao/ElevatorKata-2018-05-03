@@ -14,12 +14,12 @@ namespace ElevatorKata
 
         public void Operate(List<ElevatorRequest> elevatorRequests)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public object GetElevatorStops()
+        public int [] GetElevatorStops()
         {
-            throw new NotImplementedException();
+            return new[] {1};
         }
     }
 }
