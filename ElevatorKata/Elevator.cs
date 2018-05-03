@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ElevatorKata
 {
@@ -20,7 +21,9 @@ namespace ElevatorKata
             foreach (var elevatorRequest in elevatorRequests)
             {
                 this._elevatorStops.Add(elevatorRequest.FloorEnd);
-            }            
+            }
+
+            Floor = this._elevatorStops.Last();
         }
 
         public int [] GetElevatorStops()
