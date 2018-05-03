@@ -75,7 +75,7 @@ namespace ElevatorKata.Tests
         {
             private readonly int _elevatorFloor;
             private readonly List<ElevatorRequest> _elevatorRequests;
-            private readonly Elevator _elevator;
+            private Elevator _elevator;
 
             public WhenConditions(int elevatorFloor, List<ElevatorRequest> elevatorRequests)
             {
@@ -86,7 +86,7 @@ namespace ElevatorKata.Tests
             public WhenConditions the_elevator_operates()
             {
                 _elevator = new Elevator(_elevatorFloor);
-                _elevator.operate(this._elevatorRequests);
+                _elevator.Operate(this._elevatorRequests);
 
                 return this;
             }
