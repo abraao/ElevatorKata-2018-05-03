@@ -47,5 +47,27 @@ namespace ElevatorKata.Tests
 
             Assert.AreEqual(new int[] { -1 }, elevator.GetElevatorStops());
         }
+
+        [Test]
+
+        public void Open_Doors_On_Floors_1_and_2_When_Moving_From_Floor_0_to_Floor_2()
+        {
+            Elevator elevator = new Elevator(0);
+            elevator.Operate(new List<ElevatorRequest>
+            {
+                new ElevatorRequest
+                {
+                    FloorStart = 0,
+                    FloorEnd = 1
+                },
+                new ElevatorRequest
+                {
+                    FloorStart = 1,
+                    FloorEnd = 2
+                }
+            });
+
+            Assert.AreEqual(new int[] { 1, 2 }, elevator.GetElevatorStops());
+        }
     }
 }

@@ -17,7 +17,10 @@ namespace ElevatorKata
 
         public void Operate(List<ElevatorRequest> elevatorRequests)
         {
-            this._elevatorStops.Add(elevatorRequests[0].FloorEnd);
+            foreach (var elevatorRequest in elevatorRequests)
+            {
+                this._elevatorStops.Add(elevatorRequest.FloorEnd);
+            }            
         }
 
         public int [] GetElevatorStops()
