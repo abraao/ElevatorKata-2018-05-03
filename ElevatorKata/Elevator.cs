@@ -5,8 +5,11 @@ namespace ElevatorKata
 {
     public class Elevator
     {
+        private List<int> _elevatorStops;
+
         public Elevator(int floor)
         {
+            _elevatorStops = new List<int>();
             Floor = floor;
         }
 
@@ -14,12 +17,12 @@ namespace ElevatorKata
 
         public void Operate(List<ElevatorRequest> elevatorRequests)
         {
-            
+            this._elevatorStops.Add(elevatorRequests[0].FloorEnd);
         }
 
         public int [] GetElevatorStops()
         {
-            return new[] {1};
+            return this._elevatorStops.ToArray();
         }
     }
 }
