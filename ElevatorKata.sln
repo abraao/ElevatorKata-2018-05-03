@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorKata", "ElevatorKata\ElevatorKata.csproj", "{CE97951B-8F54-4F9A-8B1A-00F098783193}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE97951B-8F54-4F9A-8B1A-00F098783193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE97951B-8F54-4F9A-8B1A-00F098783193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE97951B-8F54-4F9A-8B1A-00F098783193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE97951B-8F54-4F9A-8B1A-00F098783193}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B78FA3C-57CF-4B96-939D-6D3EF9AE261F}
+	EndGlobalSection
+EndGlobal
